@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -24,15 +25,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.categories.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $new_category = new Category();
+        $new_category->fill($validated);
+        $new_category->save();
+
+        return redirect()->route("admin.categories.index");
     }
 
     /**

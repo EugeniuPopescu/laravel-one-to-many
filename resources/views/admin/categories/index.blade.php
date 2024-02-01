@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 
     @section('content')
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-4 overflow-y-scroll">
     	<div class="row justify-content-center">
+            <h1 class="text-center">Categories</h1>
             @foreach ($categories as $category)
-            <div class="col-md-4 py-2">
+            <div class="col-md-12 py-2">
                 <div class="card">
                     <div class="card-header">
                         <h4>

@@ -26,7 +26,7 @@
 
     		<div class="container-fluid vh-100">
     			<div class="row h-100">
-    				<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+    				<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse fixed">
     					<div class="position-sticky pt-3">
     						<ul class="nav flex-column">
 
@@ -45,7 +45,7 @@
 								{{-- portfolio index --}}
 								<li class="nav-item">
     								<a class="nav-link text-white {{ Route::currentRouteName() == 'admin.portfolios.index' ? 'bg-secondary' : '' }}" href="{{route('admin.portfolios.index')}}">
-    									<i class="fa-solid fa-address-card fa-lg fa-fw"></i> Portfolios
+    									<i class="fa-solid fa-id-card fa-lg fa-fw"></i> Portfolios
     								</a>
     							</li>
 
@@ -59,14 +59,14 @@
 								{{-- category index --}}
 								<li class="nav-item">
     								<a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.index' ? 'bg-secondary' : '' }}" href="{{route('admin.categories.index')}}">
-    									<i class="fa-solid fa-address-card fa-lg fa-fw"></i> Categories
+    									<i class="fa-solid fa-layer-group fa-lg fa-fw"></i> Categories
     								</a>
     							</li>
 
 								{{-- category create --}}
 								<li class="nav-item">
     								<a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.create' ? 'bg-secondary' : '' }}" href="{{route('admin.categories.create')}}">
-    									<i class="fa-solid fa-square-plus fa-lg fa-fw"></i> Create Cat
+    									<i class="fa-solid fa-plus fa-lg fa-fw"></i> Create Cat
     								</a>
     							</li>
 

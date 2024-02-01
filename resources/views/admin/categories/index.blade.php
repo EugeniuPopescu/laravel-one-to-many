@@ -3,40 +3,29 @@
     @section('content')
     <div class="container-fluid mt-4">
     	<div class="row justify-content-center">
-            @foreach ($portfolios as $portfolio)
+            @foreach ($categories as $category)
             <div class="col-md-4 py-2">
                 <div class="card">
                     <div class="card-header">
                         <h4>
-                            {{ $portfolio->title }}
+                            {{ $category->name }}
                         </h4>
                     </div>
                     
                     <div class="card-body">
                         <h5 class="d-inline-block">Description:</h5>
-                        <p>{{ $portfolio->description }}</p>
-                        
-                        <h5 class="d-inline-block">Role:</h5>
-                        <p>{{ $portfolio->role }}</p>
-
-                        @php
-                            var_dump($portfolio->category);
-                        @endphp
-
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            {{ $portfolio->category ? $portfolio->category->name : "Senza categoria" }}
-                        </h6>
+                        <p>{{ $category->description }}</p>
                     </div>
                     <div class="row py-2">
                         <div class="col-4 d-flex justify-content-center">
-                            <a class="btn btn-outline-warning" href="{{ route("admin.portfolios.show", $portfolio->id) }}">Dettaglio</a>
+                            <a class="btn btn-outline-warning" href="{{ route("admin.categories.show", $category->id) }}">Dettaglio</a>
                         </div>
                         <div class="col-4 d-flex justify-content-center">
-                            <a class="btn btn-outline-info text-body" href="{{ route("admin.portfolios.edit", $portfolio->id) }}">Modifica</a>
+                            <a class="btn btn-outline-info text-body" href="{{ route("admin.categories.edit", $category->id) }}">Modifica</a>
                         </div>
 
                         <div class="col-4 d-flex justify-content-center">
-                            <form action="{{ route('admin.portfolios.destroy', $portfolio->id) }}" method="POST"
+                            <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
                                 class="d-inline-block">
                                 @csrf
                                 @method('DELETE')

@@ -15,4 +15,9 @@ class Portfolio extends Model
         "img",
         "role"
     ];
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

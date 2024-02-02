@@ -26,6 +26,7 @@ class StorePortfolioRequest extends FormRequest
             "description" => "required",
             "img" => "required",
             "role" => "required",
+            "category_id" => ["nullable", "exists:categories,id"]
         ];
     }
 }

@@ -17,9 +17,12 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
+        $tags = Tag::all();
+
         $portfolios = Portfolio::all();
 
-        return view("admin.portfolios.index", compact('portfolios'));
+        return view("admin.portfolios.index", compact('portfolios', 'tags', 'categories'));
     }
 
     /**
@@ -58,7 +61,10 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        return view("admin.portfolios.show", compact('portfolio'));
+        $categories = Category::all();
+        $tags = Tag::all();
+
+        return view("admin.portfolios.show", compact('portfolio', ' tags', 'categories'));
     }
 
     /**

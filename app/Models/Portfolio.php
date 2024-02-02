@@ -13,7 +13,8 @@ class Portfolio extends Model
         "title",
         "description",
         "img",
-        "role"
+        "role",
+        "category_id"
     ];
 
     public function category()

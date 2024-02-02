@@ -59,25 +59,23 @@
 
                 {{-- select-category --}}
                 <div class="mb-3">
-                    <label for="role" class="form-label">Category</label>
-                    <select multiple name="categories[]" id="categories" class="form-select">
+                    <label for="category" class="form-label">Category</label>
+                    <select name="category_id" id="category_id" class="form-select">
                         <option value="">nessuna categoria</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
-                        
                     </select>
                 </div>
 
                 {{-- select tag --}}
                 <div class="mb-3">
-                    <label for="role" class="form-label">Tag</label>
-                    <select multiple name="categories[]" id="categories" class="form-select">
+                    <label for="tag" class="form-label">Tag</label>
+                    <select multiple name="tags[]" id="categories" class="form-select">
                         <option value="">nessun tag</option>
                         @foreach ($tags as $tag)
                             <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                        @endforeach
-                        
+                        @endforeach 
                     </select>
                 </div>
 

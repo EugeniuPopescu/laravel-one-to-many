@@ -22,8 +22,22 @@
                             <h5 class="d-inline-block">Role:</h5>
                             <p>{{ $portfolio->role }}</p>
     
+                            {{-- category --}}
                             <h6 class="card-subtitle mb-2 text-muted">
-                                {{ $portfolio->category ? $portfolio->category->name : "Senza categoria" }}
+                                Category: {{ $portfolio->category->name ?? "-" }}
+                            </h6>
+
+                            {{-- tag --}}
+                            <h6 class="card-subtitle mb-2 text-muted pt-2">
+                                @if (count($portfolio->tags) > 0)
+                                    <ul>
+                                        @foreach ($portfolio->tags as $tag)
+                                            <li>#{{ $tag->name }}</li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <p>No Tag #</p>
+                                @endif
                             </h6>
                         </div>
                     </div>

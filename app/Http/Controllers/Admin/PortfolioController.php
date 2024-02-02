@@ -8,6 +8,7 @@ use App\Models\Portfolio;
 use App\Models\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 
 class PortfolioController extends Controller
 {
@@ -26,9 +27,10 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        $category = Category::all();
+        $categories = Category::all();
+        $tags = Tag::all();
 
-        return view("admin.portfolios.create", compact('category'));
+        return view("admin.portfolios.create", compact('categories', 'tags'));
     }
 
     /**
@@ -41,6 +43,12 @@ class PortfolioController extends Controller
         $new_portfolio = new Portfolio();
         $new_portfolio->fill($validated);
         $new_portfolio->save();
+
+        // relazione portfolio tag
+        if ($request->tags) {
+            $new_portfolio->tags()->attach($request->tags);
+        }
+
 
         return redirect()->route("admin.portfolios.index");
     }

@@ -17,6 +17,7 @@
                         <h5 class="d-inline-block">Description:</h5>
                         <p>{{ $category->description }}</p>
                     </div>
+                    
                     <div class="row py-2">
                         <div class="col-4 d-flex justify-content-center">
                             <a class="btn btn-outline-warning" href="{{ route("admin.categories.show", $category->id) }}">Dettaglio</a>

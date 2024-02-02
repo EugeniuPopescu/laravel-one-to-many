@@ -22,10 +22,6 @@
                             <h5 class="d-inline-block">Role:</h5>
                             <p>{{ $portfolio->role }}</p>
     
-                            @php
-                                var_dump($portfolio->category);
-                            @endphp
-    
                             <h6 class="card-subtitle mb-2 text-muted">
                                 {{ $portfolio->category ? $portfolio->category->name : "Senza categoria" }}
                             </h6>
@@ -33,7 +29,7 @@
                     </div>
                     <div class="row py-2">
                         <div class="col-4 d-flex justify-content-center">
-                            <a class="btn btn-outline-warning" href="{{ route("admin.portfolios.show", $portfolio->id) }}">Dettaglio</a>
+                            <a class="btn btn-outline-warning text-dark" href="{{ route("admin.portfolios.show", $portfolio->id) }}">Dettaglio</a>
                         </div>
                         <div class="col-4 d-flex justify-content-center">
                             <a class="btn btn-outline-info text-body" href="{{ route("admin.portfolios.edit", $portfolio->id) }}">Modifica</a>

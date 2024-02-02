@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\StorePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
 use App\Models\Portfolio;
+use App\Models\Category;
 
 use App\Http\Controllers\Controller;
 
@@ -25,7 +26,9 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view("admin.portfolios.create");
+        $category = Category::all();
+
+        return view("admin.portfolios.create", compact('category'));
     }
 
     /**

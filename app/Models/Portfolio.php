@@ -16,7 +16,7 @@ class Portfolio extends Model
         "role"
     ];
 
-    public function categories()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
